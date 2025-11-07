@@ -39,7 +39,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   return (
     <Ctx.Provider value={value}>
       {children}
-      <ToastContainer position="top-end" className="p-3">
+      <ToastContainer position="top-end" className="p-3" style={{ position: 'fixed' }}>
         {items.map((t) => (
           <Toast key={t.id} bg={t.bg} onClose={() => remove(t.id)} delay={3500} autohide>
             <Toast.Body>{t.text}</Toast.Body>

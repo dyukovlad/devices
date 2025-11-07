@@ -1,51 +1,23 @@
 # AGENTS.md
 
-## Build Commands
-- `npm run build` - Type-check and build for production
-- `npm run dev` - Start development server
-- `npm run preview` - Preview production build
+## Commands
 
-## Test Commands
-No test framework configured yet. Add testing setup when needed.
+- Build: `npm run build` (type-check + production build)
+- Dev: `npm run dev` (start dev server on port 5173)
+- Preview: `npm run preview`
+- Lint: `npm run lint` / `npm run lint:fix`
+- Format: `npm run format` (Prettier)
+- Type-check: `npm run type-check`
+- Tests: No test framework configured yet
 
-## Code Style Guidelines
+## Code Style
 
-### TypeScript
-- Strict mode enabled
-- Use explicit types for function parameters and return values
-- Define interfaces/types for API responses
-- Use union types for error states (`string | null`)
-
-### React
-- Functional components with hooks
-- Use `useEffect` with cleanup for async operations
-- Handle component unmounting with `mounted` flag
-- Use React Bootstrap components for UI consistency
-
-### Imports
-- External libraries first (react, react-bootstrap, axios)
-- Path aliases: `@shared/*` for shared code, `@features/*` for features
-- Group imports by type, separate with blank lines
-
-### Naming Conventions
-- Components: PascalCase (DevicesPage, PlayersList)
-- Functions/variables: camelCase (getDevices, notifyError)
-- Files: PascalCase for components, camelCase for utilities
-- Types: PascalCase with descriptive names
-
-### Error Handling
-- Use try/catch with async/await
-- Custom error types with status, message, and data
-- Display user-friendly error messages (support Russian)
-- Use toast notifications for user feedback
-
-### Async Patterns
-- Prefer async/await over promises
-- Use `mounted` flag to prevent state updates on unmounted components
-- Handle loading states with boolean flags
-
-### File Structure
-- `src/features/` - Feature-specific components
-- `src/shared/` - Reusable utilities, API, UI components
-- Keep components focused and single-responsibility</content>
-<parameter name="filePath">/Users/dyukovlad/dev/devices/AGENTS.md
+- **TypeScript**: Strict mode, explicit types, interfaces for API responses
+- **React**: Functional components with hooks, React Bootstrap UI
+- **Imports**: External libs first, then `@shared/*` and `@features/*` aliases
+- **Naming**: PascalCase components/types, camelCase functions/variables
+- **Formatting**: Prettier (semi: true, singleQuote: true, printWidth: 100, tabWidth: 2)
+- **Error Handling**: Custom ApiError type, Russian error messages, toast notifications
+- **Async**: async/await with mounted flags, loading states
+- **Structure**: `src/features/` for features, `src/shared/` for reusable code</content>
+  <parameter name="filePath">/Users/dyukovlad/dev/devices/AGENTS.md
