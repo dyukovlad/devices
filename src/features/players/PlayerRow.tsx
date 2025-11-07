@@ -39,6 +39,16 @@ export default function PlayerRow({
       return;
     }
 
+    // Проверяем, не станет ли баланс слишком отрицательным при снятии
+    if (delta < 0) {
+      const currentBalance = localPlace.balances / 100; // Конвертируем из копеек в рубли
+      const newBalance = currentBalance - n;
+      if (newBalance < -1000) {
+        notifyError('Недостаточно средств на балансе');
+        return;
+      }
+    }
+
     // Конвертируем в копейки/центы (умножаем на 100)
     const deltaInCents = Math.round(delta * n * 100);
 
@@ -84,7 +94,9 @@ export default function PlayerRow({
       <div className="d-flex justify-content-between align-items-center mb-2">
         <div>
           <div className="fw-semibold">Место {localPlace.place}</div>
-          <div className="text-muted small">Баланс: {formatAmount(localPlace.balances)} {localPlace.currency}</div>
+          <div className="text-muted small">
+            Баланс: {formatAmount(localPlace.balances)} {localPlace.currency}
+          </div>
         </div>
         <Button variant="outline-secondary" size="sm" onClick={() => setShowPinPad((s) => !s)}>
           {showPinPad ? 'Скрыть' : 'Пинпад'}
