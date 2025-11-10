@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { updateDevicePlaceBalance, type DevicePlace } from '@shared/api/devices';

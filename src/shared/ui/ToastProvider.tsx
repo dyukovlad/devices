@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, useCallback, useContext, useMemo, useState, ReactNode } from 'react';
 import { Toast, ToastContainer } from 'react-bootstrap';
 

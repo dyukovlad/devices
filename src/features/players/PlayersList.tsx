@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { Alert, ListGroup, Spinner } from 'react-bootstrap';
 import { getDeviceById, type Device } from '@shared/api/devices';
