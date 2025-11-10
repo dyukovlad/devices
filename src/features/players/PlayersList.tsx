@@ -47,7 +47,14 @@ export default function PlayersList({ deviceId }: { deviceId: number }) {
             deviceId={deviceId}
             onPlaceUpdate={(updatedPlace) =>
               setDevice((prev) =>
-                prev ? { ...prev, places: prev.places.map((p) => (p.place === updatedPlace.place ? updatedPlace : p)) } : null
+                prev
+                  ? {
+                      ...prev,
+                      places: prev.places.map((p) =>
+                        p.place === updatedPlace.place ? updatedPlace : p
+                      ),
+                    }
+                  : null
               )
             }
           />

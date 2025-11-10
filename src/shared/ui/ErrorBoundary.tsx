@@ -42,7 +42,6 @@ export class ErrorBoundary extends Component<Props, State> {
           >
             Попробовать снова
           </Button>
-
         </Alert>
       );
     }
